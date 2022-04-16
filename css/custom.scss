@@ -1,10 +1,290 @@
-html{
-	background: black;
+/*
+	This CSS was complied by SASS.
+*/
+
+$ribbon-base: 	  #5D0000;
+$ribbon-stripe:   #FFEE00;
+$primary-color:   #000000;
+$secondary-color: #FFFFFF;
+$accent-color:    #C4C4C4;
+
+$font-primary: 'IBM Plex Mono', monospace;
+
+
+html,body{
+	background: $primary-color;
+	color: $secondary-color;
+	font-family: $font-primary;
+	user-select: none;
+	margin: 0;
+	overflow: hidden;
 }
 
-body{
-	background: white;
-	width: 1000px;
-	height: 100%;
-	margin: auto;
+.wrapper{
+	display: flex;
+	margin: 0 10vw;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	height: 100vh;
+
+	.sidebar{
+		background: $primary-color;
+		width:20vw;
+		padding: 0 1vw;
+		z-index: 1;
+		position: relative;
+
+		.img-frame{
+			position: relative;
+
+			img{
+				width: 100%;
+			}	
+
+			.shape-ribbon{
+				position: absolute;
+				z-index: 2;
+				background: $ribbon-base;
+				width: 5vw;
+				height: 3vh;
+				transform: rotate(130deg);
+				right: -1.8vw;
+				bottom: 1vw;
+			
+				.stripe{
+					position: absolute;
+					z-index: 2;
+					border-top: 1px solid $ribbon-stripe;
+					border-bottom: 1px solid $ribbon-stripe;
+					width: 5vw;
+					height: 2.0vh;
+					margin-top: 0.3vh;
+				}
+			}
+		}
+		
+
+		.name-logo{
+			display: flex;
+			justify-content: center;
+			margin-top: 1.5vw;
+
+			//border: 1px solid white;
+
+			.drop-cap{
+				font-size: 3.5vw; //4em
+				font-weight: bold;
+				flex: 1;
+				text-align: end;
+				margin-bottom: 0.4vh;
+
+				p{
+					margin: 0;
+					width: 100%;
+					height: auto;
+				}
+			}
+			.sub-cap{
+				flex: 2;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				margin-left: 0.2vw;
+
+				p{
+					margin: 0;
+					font-size: 1.5vw; //2em
+					line-height: 1;
+					font-weight: bold;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.college-education{
+			margin-top: 1.5vw;
+			
+			.title{
+				font-size: 1.2vw;
+				font-weight: bold;
+				margin: 0;
+			}
+			.description{
+				font-size: 0.8vw;
+				margin: 0;
+			}
+		}
+
+		.contact-information{
+			margin-top: 1.5vw;
+			
+			.title{
+				font-size: 1.2vw;
+				font-weight: bold;
+				margin: 0;
+			}
+			.description{
+				font-size: 0.8vw;
+				margin: 0;
+
+				a{
+					text-decoration: none;
+					color: $secondary-color;
+				}
+			}
+		}
+
+		.gear-icon{
+			width: 7vw;
+			height: 7vw;
+			position: absolute;
+			bottom: 8.2vh;
+			left: 4.3vw;
+			animation: bigGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+		.gear-icon-2{
+			width: 5vw;
+			height: 5vw;
+			position: absolute;
+			bottom: 4vh;
+			left: 10vw;
+			animation: smallGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+		.gear-icon-3{
+			width: 4vw;
+			height: 4vw;
+			position: absolute;
+			bottom: 0.4vh;
+			left: 7vw;
+			animation: tinyGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+
+		.shape-ribbon-2{
+			position: absolute;
+			z-index: 2;
+			background: $ribbon-base;
+			width: 35vw;
+			height: 10vh;
+			transform: rotate(50deg);
+			left: -20vw;
+			bottom: 5vw;
+		
+			.stripe{
+				position: absolute;
+				z-index: 2;
+				border-top: 2px solid $ribbon-stripe;
+				border-bottom: 2px solid $ribbon-stripe;
+				width: 35vw;
+				height: 8vh;
+				margin-top: 0.6vh;
+			}
+		}
+
+		.shape-ribbon-3{
+			position: absolute;
+			z-index: 2;
+			background: $ribbon-base;
+			width: 50vw;
+			height: 10vh;
+			transform: rotate(65deg);
+			top: 10vw;
+			right: -93vw;
+		
+			.stripe{
+				position: absolute;
+				z-index: 2;
+				border-top: 2px solid $ribbon-stripe;
+				border-bottom: 2px solid $ribbon-stripe;
+				width: 50vw;
+				height: 8vh;
+				margin-top: 0.6vh;
+			}
+		}
+	}
+	.main{
+		width:80vw;
+		overflow: hidden;
+
+		.notification{
+			height: 3vh;
+			border-bottom: 1px solid white;
+			overflow: hidden;
+			display: inline-block;
+
+			p{
+				white-space: nowrap;
+				margin: 0;
+				font-size: 1.2em;
+				animation: notificationAnim 14s linear infinite;
+			}
+		}
+
+		.content{
+			height: 90vh;
+			overflow-y: scroll;
+		}
+
+		.footer{
+			margin-top: 1vh;
+			height: 3vh;
+			width: 100%;
+			border-top: 1px solid white;
+			overflow: hidden;
+			display: inline-block;
+
+			p{
+				white-space: nowrap;
+				margin: 0;
+				font-size: 1.2em;
+				animation: copyrightAnim 7s linear infinite;
+			}
+		}
+	}
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+@keyframes notificationAnim{
+	0%{transform: translate(35%, 0);}
+	100%{transform: translate(-100%, 0);}
+}
+@keyframes copyrightAnim{
+	0%{transform: translate(-100%, 0);}
+	100%{transform: translate(100%, 0);}
+}
+
+@keyframes bigGearAnim{
+	0%{transform: rotate(360deg);}
+	100%{transform: rotate(0deg);}
+}
+@keyframes smallGearAnim{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(360deg);}
+}
+@keyframes tinyGearAnim{
+	0%{transform: rotate(360deg);}
+	100%{transform: rotate(0deg);}
 }
