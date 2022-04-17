@@ -11,6 +11,7 @@ html, body {
           user-select: none;
   margin: 0;
   overflow: hidden;
+  height: 100%;
 }
 
 .wrapper {
@@ -512,5 +513,71 @@ html, body {
   }
   100% {
     transform: scale(1);
+  }
+}
+@media only screen and (max-width: 412px) {
+  .wrapper {
+    margin: 0;
+  }
+  .wrapper .sidebar {
+    background: #000000;
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    overflow-y: scroll;
+    transform: translateX(-65vw);
+    transition: all 0.4s;
+  }
+  .wrapper .sidebar:hover {
+    transform: translateX(0);
+  }
+  .wrapper .sidebar .name-logo .drop-cap {
+    font-size: 8vh;
+  }
+  .wrapper .sidebar .name-logo .sub-cap {
+    margin-left: 0.5vw;
+  }
+  .wrapper .sidebar .name-logo .sub-cap p {
+    font-size: 3.3vh;
+  }
+  .wrapper .sidebar .college-education .title {
+    font-size: 2.4vh;
+  }
+  .wrapper .sidebar .college-education .description {
+    font-size: 1.6vh;
+  }
+  .wrapper .sidebar .contact-information .title {
+    font-size: 2.4vh;
+  }
+  .wrapper .sidebar .contact-information .description {
+    font-size: 1.6vh;
+    margin: 0;
+  }
+  .wrapper .main {
+    position: absolute;
+    width: 90vw;
+    right: 0;
+  }
+  .wrapper .main .content {
+    height: 85vh;
+  }
+  .wrapper .main .content .tab {
+    height: 82vh;
+    font-size: 0.5em;
+  }
+  .wrapper .main .content .tab .section .title {
+    font-size: 1.2em;
+  }
+
+  .shape-ribbon {
+    display: none;
+  }
+
+  .shape-ribbon-2 {
+    display: none;
+  }
+
+  .shape-ribbon-3 {
+    display: none;
   }
 }/*# sourceMappingURL=custom.css.map */
