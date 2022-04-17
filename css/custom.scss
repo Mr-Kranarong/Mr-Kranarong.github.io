@@ -236,8 +236,52 @@ html,body{
 		}
 
 		.content{
+			background: $secondary-color;
 			height: 90vh;
-			overflow-y: scroll;
+			overflow: hidden;
+
+			.tab-bar{
+				display: flex;
+				width: 100%;
+				background: $primary-color;
+				text-align: center;
+
+				button{
+					border: none;
+					flex: 1;
+					margin: 0;
+					height: 100%;
+					padding: 1vw;
+					font-weight: bold;
+					background: $secondary-color;
+					color: $primary-color;
+					transition: .1s linear;
+
+					&.active{
+						background: $primary-color;
+						color: $secondary-color;
+						pointer-events: none;
+					}
+
+					&:hover{
+						background: darken($secondary-color,20);
+					}
+					&:active{
+						background: $primary-color;
+						color: $secondary-color;
+					}
+				}
+			}
+
+			.tab{
+				width: auto;
+				height: 82vh;
+				padding: 1vw 3vw;
+				background: $secondary-color;
+				color: lighten($primary-color, 15);
+				overflow-y: scroll;
+				font-size: 0.8em;
+			}
 		}
 
 		.footer{

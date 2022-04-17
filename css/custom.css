@@ -204,8 +204,47 @@ html, body {
           animation: notificationAnim 14s linear infinite;
 }
 .wrapper .main .content {
+  background: #FFFFFF;
   height: 90vh;
+  overflow: hidden;
+}
+.wrapper .main .content .tab-bar {
+  display: flex;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+}
+.wrapper .main .content .tab-bar button {
+  border: none;
+  flex: 1;
+  margin: 0;
+  height: 100%;
+  padding: 1vw;
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #000000;
+  transition: 0.1s linear;
+}
+.wrapper .main .content .tab-bar button.active {
+  background: #000000;
+  color: #FFFFFF;
+  pointer-events: none;
+}
+.wrapper .main .content .tab-bar button:hover {
+  background: #cccccc;
+}
+.wrapper .main .content .tab-bar button:active {
+  background: #000000;
+  color: #FFFFFF;
+}
+.wrapper .main .content .tab {
+  width: auto;
+  height: 82vh;
+  padding: 1vw 3vw;
+  background: #FFFFFF;
+  color: #262626;
   overflow-y: scroll;
+  font-size: 0.8em;
 }
 .wrapper .main .footer {
   margin-top: 1vh;
