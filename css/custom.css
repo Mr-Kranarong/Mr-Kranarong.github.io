@@ -1,10 +1,516 @@
-html {
-  background: black;
+/*
+	This CSS was complied by SASS.
+*/
+html, body {
+  background: #000000;
+  color: #FFFFFF;
+  font-family: "IBM Plex Mono", monospace;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
+  overflow: hidden;
 }
 
-body {
-  background: white;
-  width: 1000px;
+.wrapper {
+  display: flex;
+  margin: 0 10vw;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  height: 100vh;
+  transform: scale(0.8);
+  transition: all 0.5s;
+}
+.wrapper .sidebar {
+  background: #000000;
+  width: 20vw;
+  padding: 0 1vw;
+  z-index: 1;
+  position: relative;
+}
+.wrapper .sidebar .img-frame {
+  position: relative;
+}
+.wrapper .sidebar .img-frame img {
+  width: 100%;
+}
+.wrapper .sidebar .img-frame .shape-ribbon {
+  position: absolute;
+  z-index: 2;
+  background: #5D0000;
+  width: 5vw;
+  height: 3vh;
+  transform: rotate(130deg);
+  right: -1.8vw;
+  bottom: 1vw;
+}
+.wrapper .sidebar .img-frame .shape-ribbon .stripe {
+  position: absolute;
+  z-index: 2;
+  border-top: 1px solid #FFEE00;
+  border-bottom: 1px solid #FFEE00;
+  width: 5vw;
+  height: 2vh;
+  margin-top: 0.3vh;
+}
+.wrapper .sidebar .name-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vw;
+}
+.wrapper .sidebar .name-logo .drop-cap {
+  font-size: 3.5vw;
+  font-weight: bold;
+  flex: 1;
+  text-align: end;
+  margin-bottom: 0.4vh;
+}
+.wrapper .sidebar .name-logo .drop-cap p {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+.wrapper .sidebar .name-logo .sub-cap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0.2vw;
+}
+.wrapper .sidebar .name-logo .sub-cap p {
+  margin: 0;
+  font-size: 1.5vw;
+  line-height: 1;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+}
+.wrapper .sidebar .college-education {
+  margin-top: 1.5vw;
+}
+.wrapper .sidebar .college-education .title {
+  font-size: 1.2vw;
+  font-weight: bold;
+  margin: 0;
+}
+.wrapper .sidebar .college-education .description {
+  font-size: 0.8vw;
+  margin: 0;
+}
+.wrapper .sidebar .contact-information {
+  margin-top: 1.5vw;
+}
+.wrapper .sidebar .contact-information .title {
+  font-size: 1.2vw;
+  font-weight: bold;
+  margin: 0;
+}
+.wrapper .sidebar .contact-information .description {
+  font-size: 0.8vw;
+  margin: 0;
+}
+.wrapper .sidebar .contact-information .description a {
+  cursor: default;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.wrapper .sidebar .gear-icon {
+  width: 7vw;
+  height: 7vw;
+  position: absolute;
+  bottom: 8.2vh;
+  left: 4.3vw;
+  -webkit-animation: bigGearAnim 2s linear infinite;
+          animation: bigGearAnim 2s linear infinite;
+}
+.wrapper .sidebar .gear-icon path {
+  fill: #FFFFFF;
+}
+.wrapper .sidebar .gear-icon-2 {
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  bottom: 4vh;
+  left: 10vw;
+  -webkit-animation: smallGearAnim 2s linear infinite;
+          animation: smallGearAnim 2s linear infinite;
+}
+.wrapper .sidebar .gear-icon-2 path {
+  fill: #FFFFFF;
+}
+.wrapper .sidebar .gear-icon-3 {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  bottom: 0.4vh;
+  left: 7vw;
+  -webkit-animation: tinyGearAnim 2s linear infinite;
+          animation: tinyGearAnim 2s linear infinite;
+}
+.wrapper .sidebar .gear-icon-3 path {
+  fill: #FFFFFF;
+}
+.wrapper .sidebar .shape-ribbon-2 {
+  position: absolute;
+  z-index: 2;
+  background: #5D0000;
+  width: 35vw;
+  height: 10vh;
+  transform: rotate(50deg);
+  left: -20vw;
+  bottom: 5vw;
+}
+.wrapper .sidebar .shape-ribbon-2 .stripe {
+  position: absolute;
+  z-index: 2;
+  border-top: 2px solid #FFEE00;
+  border-bottom: 2px solid #FFEE00;
+  width: 35vw;
+  height: 8vh;
+  margin-top: 0.6vh;
+}
+.wrapper .sidebar .shape-ribbon-3 {
+  position: absolute;
+  z-index: 2;
+  background: #5D0000;
+  width: 50vw;
+  height: 10vh;
+  transform: rotate(65deg);
+  top: 10vw;
+  right: -93vw;
+}
+.wrapper .sidebar .shape-ribbon-3 .stripe {
+  position: absolute;
+  z-index: 2;
+  border-top: 2px solid #FFEE00;
+  border-bottom: 2px solid #FFEE00;
+  width: 50vw;
+  height: 8vh;
+  margin-top: 0.6vh;
+}
+.wrapper .main {
+  width: 80vw;
+  overflow: hidden;
+}
+.wrapper .main .notification {
+  height: 3vh;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+  display: inline-block;
+}
+.wrapper .main .notification p {
+  white-space: nowrap;
+  margin: 0;
+  font-size: 1.2em;
+  -webkit-animation: notificationAnim 16s linear infinite;
+          animation: notificationAnim 16s linear infinite;
+}
+.wrapper .main .content {
+  background: #FFFFFF;
+  height: 90vh;
+  overflow: hidden;
+}
+.wrapper .main .content .tab-bar {
+  display: flex;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+}
+.wrapper .main .content .tab-bar button {
+  border: none;
+  flex: 1;
+  margin: 0;
   height: 100%;
-  margin: auto;
+  padding: 1vw;
+  font-weight: bold;
+  background: #000000;
+  color: #FFFFFF;
+  transition: all 0.25s;
+}
+.wrapper .main .content .tab-bar button.active {
+  background: #FFFFFF;
+  color: #000000;
+  pointer-events: none;
+}
+.wrapper .main .content .tab {
+  width: auto;
+  height: 82vh;
+  padding: 1vw 3vw;
+  background: #FFFFFF;
+  color: #262626;
+  overflow-y: scroll;
+  font-size: 0.8em;
+}
+.wrapper .main .content .tab .section {
+  margin: 1vw 0;
+}
+.wrapper .main .content .tab .section .title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.wrapper .main .content .tab .section .subtitle {
+  margin-top: 0.25vw;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #404040;
+  border-bottom: 1px solid black;
+}
+.wrapper .main .content .tab .section .description {
+  margin-top: 0;
+}
+.wrapper .main .content .tab .section .list {
+  margin: 0;
+}
+.wrapper .main .content .tab .section .list a {
+  color: #000000;
+  text-decoration: none;
+}
+.wrapper .main .footer {
+  margin-top: 1vh;
+  height: 3vh;
+  width: 100%;
+  border-top: 1px solid white;
+  overflow: hidden;
+  display: inline-block;
+}
+.wrapper .main .footer p {
+  white-space: nowrap;
+  margin: 0;
+  font-size: 1.2em;
+  -webkit-animation: copyrightAnim 8s linear infinite;
+          animation: copyrightAnim 8s linear infinite;
+}
+
+.card {
+  padding: 1em;
+  transition: all 0.5s;
+  box-shadow: 2px 2px 5px;
+}
+.card:hover {
+  box-shadow: 3px 3px 10px;
+  transform: scale(1.1);
+}
+
+.wrapper-reveal {
+  -webkit-animation: wrapperRevealAnim 0.25s linear forwards;
+          animation: wrapperRevealAnim 0.25s linear forwards;
+}
+
+.loading-left {
+  position: fixed;
+  background: #000000;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  border-right: 1px solid white;
+}
+
+.loading-right {
+  position: fixed;
+  background: #000000;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  border-left: 1px solid white;
+}
+
+#gear-icon-load {
+  width: 20vw;
+  height: 20vw;
+  z-index: 4;
+  position: fixed;
+  top: 33vh;
+  left: 39.9vw;
+  transition: all 0.75s;
+}
+#gear-icon-load path {
+  fill: #FFFFFF;
+}
+
+.gear-icon-load-start {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: loadGearAnim 0.75s linear forwards;
+          animation: loadGearAnim 0.75s linear forwards;
+}
+
+.fade-left {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: fadeLeftAnim 0.75s linear forwards;
+          animation: fadeLeftAnim 0.75s linear forwards;
+}
+
+.fade-right {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: fadeRightAnim 0.75s linear forwards;
+          animation: fadeRightAnim 0.75s linear forwards;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+@-webkit-keyframes notificationAnim {
+  0% {
+    transform: translate(35%, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes notificationAnim {
+  0% {
+    transform: translate(35%, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@-webkit-keyframes copyrightAnim {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@keyframes copyrightAnim {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@-webkit-keyframes bigGearAnim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes bigGearAnim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes smallGearAnim {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes smallGearAnim {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes tinyGearAnim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes tinyGearAnim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes loadGearAnim {
+  0% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, -300%) rotate(0deg);
+  }
+}
+@keyframes loadGearAnim {
+  0% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, -300%) rotate(0deg);
+  }
+}
+@-webkit-keyframes fadeLeftAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes fadeLeftAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@-webkit-keyframes fadeRightAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@keyframes fadeRightAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@-webkit-keyframes wrapperRevealAnim {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes wrapperRevealAnim {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=custom.css.map */

@@ -1,10 +1,459 @@
-html{
-	background: black;
+/*
+	This CSS was complied by SASS.
+*/
+
+$ribbon-base: 	  #5D0000;
+$ribbon-stripe:   #FFEE00;
+$primary-color:   #000000;
+$secondary-color: #FFFFFF;
+$accent-color:    #C4C4C4;
+
+$font-primary: 'IBM Plex Mono', monospace;
+
+
+html,body{
+	background: $primary-color;
+	color: $secondary-color;
+	font-family: $font-primary;
+	user-select: none;
+	margin: 0;
+	overflow: hidden;
 }
 
-body{
-	background: white;
-	width: 1000px;
+.wrapper{
+	display: flex;
+	margin: 0 10vw;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	height: 100vh;
+	transform: scale(0.8);
+	transition: all 0.5s;
+
+	.sidebar{
+		background: $primary-color;
+		width:20vw;
+		padding: 0 1vw;
+		z-index: 1;
+		position: relative;
+
+		.img-frame{
+			position: relative;
+
+			img{
+				width: 100%;
+			}	
+
+			.shape-ribbon{
+				position: absolute;
+				z-index: 2;
+				background: $ribbon-base;
+				width: 5vw;
+				height: 3vh;
+				transform: rotate(130deg);
+				right: -1.8vw;
+				bottom: 1vw;
+			
+				.stripe{
+					position: absolute;
+					z-index: 2;
+					border-top: 1px solid $ribbon-stripe;
+					border-bottom: 1px solid $ribbon-stripe;
+					width: 5vw;
+					height: 2.0vh;
+					margin-top: 0.3vh;
+				}
+			}
+		}
+		
+
+		.name-logo{
+			display: flex;
+			justify-content: center;
+			margin-top: 1.5vw;
+
+			//border: 1px solid white;
+
+			.drop-cap{
+				font-size: 3.5vw; //4em
+				font-weight: bold;
+				flex: 1;
+				text-align: end;
+				margin-bottom: 0.4vh;
+
+				p{
+					margin: 0;
+					width: 100%;
+					height: auto;
+				}
+			}
+			.sub-cap{
+				flex: 2;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				margin-left: 0.2vw;
+
+				p{
+					margin: 0;
+					font-size: 1.5vw; //2em
+					line-height: 1;
+					font-weight: bold;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.college-education{
+			margin-top: 1.5vw;
+			
+			.title{
+				font-size: 1.2vw;
+				font-weight: bold;
+				margin: 0;
+			}
+			.description{
+				font-size: 0.8vw;
+				margin: 0;
+			}
+		}
+
+		.contact-information{
+			margin-top: 1.5vw;
+			
+			.title{
+				font-size: 1.2vw;
+				font-weight: bold;
+				margin: 0;
+			}
+			.description{
+				font-size: 0.8vw;
+				margin: 0;
+
+				a{
+					cursor: default;
+					text-decoration: none;
+					color: $secondary-color;
+				}
+			}
+		}
+
+		.gear-icon{
+			width: 7vw;
+			height: 7vw;
+			position: absolute;
+			bottom: 8.2vh;
+			left: 4.3vw;
+			animation: bigGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+		.gear-icon-2{
+			width: 5vw;
+			height: 5vw;
+			position: absolute;
+			bottom: 4vh;
+			left: 10vw;
+			animation: smallGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+		.gear-icon-3{
+			width: 4vw;
+			height: 4vw;
+			position: absolute;
+			bottom: 0.4vh;
+			left: 7vw;
+			animation: tinyGearAnim 2s linear infinite;
+
+			path{
+				fill: $secondary-color;
+			}
+		}
+
+
+		.shape-ribbon-2{
+			position: absolute;
+			z-index: 2;
+			background: $ribbon-base;
+			width: 35vw;
+			height: 10vh;
+			transform: rotate(50deg);
+			left: -20vw;
+			bottom: 5vw;
+		
+			.stripe{
+				position: absolute;
+				z-index: 2;
+				border-top: 2px solid $ribbon-stripe;
+				border-bottom: 2px solid $ribbon-stripe;
+				width: 35vw;
+				height: 8vh;
+				margin-top: 0.6vh;
+			}
+		}
+
+		.shape-ribbon-3{
+			position: absolute;
+			z-index: 2;
+			background: $ribbon-base;
+			width: 50vw;
+			height: 10vh;
+			transform: rotate(65deg);
+			top: 10vw;
+			right: -93vw;
+		
+			.stripe{
+				position: absolute;
+				z-index: 2;
+				border-top: 2px solid $ribbon-stripe;
+				border-bottom: 2px solid $ribbon-stripe;
+				width: 50vw;
+				height: 8vh;
+				margin-top: 0.6vh;
+			}
+		}
+	}
+	.main{
+		width:80vw;
+		overflow: hidden;
+
+		.notification{
+			height: 3vh;
+			border-bottom: 1px solid white;
+			overflow: hidden;
+			display: inline-block;
+
+			p{
+				white-space: nowrap;
+				margin: 0;
+				font-size: 1.2em;
+				animation: notificationAnim 16s linear infinite;
+			}
+		}
+
+		.content{
+			background: $secondary-color;
+			height: 90vh;
+			overflow: hidden;
+
+			.tab-bar{
+				display: flex;
+				width: 100%;
+				background: $primary-color;
+				text-align: center;
+
+				button{
+					border: none;
+					flex: 1;
+					margin: 0;
+					height: 100%;
+					padding: 1vw;
+					font-weight: bold;
+					background: $primary-color;
+					color: $secondary-color;
+					transition: all .25s;
+
+					&.active{
+						background: $secondary-color;
+						color: $primary-color;
+						pointer-events: none;
+					}
+				}
+			}
+
+			.tab{
+				width: auto;
+				height: 82vh;
+				padding: 1vw 3vw;
+				background: $secondary-color;
+				color: lighten($primary-color, 15);
+				overflow-y: scroll;
+				font-size: 0.8em;
+
+				.section{
+					margin: 1vw 0;
+					
+					.title{
+						margin: 0;
+						font-size: 1.5em;
+						font-weight: bold;
+					}
+					.subtitle{
+						margin-top: 0.25vw;
+						margin-bottom: 0;
+						font-weight: bold;
+						color: lighten($primary-color, 25);
+						border-bottom: 1px solid black;
+					}
+					.description{
+						margin-top: 0;
+					}
+					.list{
+						margin: 0;
+
+						a{
+							color: $primary-color;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		.footer{
+			margin-top: 1vh;
+			height: 3vh;
+			width: 100%;
+			border-top: 1px solid white;
+			overflow: hidden;
+			display: inline-block;
+
+			p{
+				white-space: nowrap;
+				margin: 0;
+				font-size: 1.2em;
+				animation: copyrightAnim 8s linear infinite;
+			}
+		}
+	}
+}
+
+.card{
+	padding: 1em;
+	transition: all 0.5s;
+	box-shadow: 2px 2px 5px;
+
+	&:hover{
+		box-shadow: 3px 3px 10px;
+		transform: scale(1.1);
+	}
+}
+
+.wrapper-reveal{
+	animation: wrapperRevealAnim 0.25s linear forwards;
+}
+
+.loading-left{
+	position: fixed;
+	background: $primary-color;
+	width: 50%;
 	height: 100%;
-	margin: auto;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	border-right: 1px solid white;
+}
+.loading-right{
+	position: fixed;
+	background: $primary-color;
+	width: 50%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	border-left: 1px solid white;
+}
+#gear-icon-load{
+	width: 20vw;
+	height: 20vw;
+	z-index: 4;
+	position: fixed;
+	top: 33vh;
+	left: 39.9vw;
+	transition: all 0.75s;
+
+	path{
+		fill: $secondary-color;
+	}
+}
+.gear-icon-load-start{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: loadGearAnim 0.75s linear forwards;
+}
+
+.fade-left{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: fadeLeftAnim 0.75s linear forwards;
+}
+.fade-right{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: fadeRightAnim 0.75s linear forwards;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+@keyframes notificationAnim{
+	0%{transform: translate(35%, 0);}
+	100%{transform: translate(-100%, 0);}
+}
+@keyframes copyrightAnim{
+	0%{transform: translate(-100%, 0);}
+	100%{transform: translate(100%, 0);}
+}
+
+@keyframes bigGearAnim{
+	0%{transform: rotate(360deg);}
+	100%{transform: rotate(0deg);}
+}
+@keyframes smallGearAnim{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(360deg);}
+}
+@keyframes tinyGearAnim{
+	0%{transform: rotate(360deg);}
+	100%{transform: rotate(0deg);}
+}
+@keyframes loadGearAnim{
+	0%{
+		transform: translate(0, 0) rotate(360deg);
+	}
+	100%{
+		transform: translate(0, -300%) rotate(0deg);
+	}
+}
+
+@keyframes fadeLeftAnim{
+	0%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(-100%, 0);
+	}
+}
+@keyframes fadeRightAnim{
+	0%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(100%, 0);
+	}
+}
+
+@keyframes wrapperRevealAnim{
+	0%{
+		transform: scale(0.8);
+	}
+	100%{
+		transform: scale(1);
+	}
 }
