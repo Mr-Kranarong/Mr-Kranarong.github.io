@@ -231,7 +231,7 @@ html,body{
 				white-space: nowrap;
 				margin: 0;
 				font-size: 1.2em;
-				animation: notificationAnim 14s linear infinite;
+				animation: notificationAnim 16s linear infinite;
 			}
 		}
 
@@ -256,6 +256,7 @@ html,body{
 					background: $secondary-color;
 					color: $primary-color;
 					transition: .1s linear;
+					cursor: pointer;
 
 					&.active{
 						background: $primary-color;
@@ -263,13 +264,11 @@ html,body{
 						pointer-events: none;
 					}
 
+					/*
 					&:hover{
 						background: darken($secondary-color,20);
 					}
-					&:active{
-						background: $primary-color;
-						color: $secondary-color;
-					}
+					*/
 				}
 			}
 
@@ -281,6 +280,29 @@ html,body{
 				color: lighten($primary-color, 15);
 				overflow-y: scroll;
 				font-size: 0.8em;
+
+				.section{
+					margin: 1vw 0;
+					
+					.title{
+						margin: 0;
+						font-size: 1.5em;
+						font-weight: bold;
+					}
+					.subtitle{
+						margin-top: 0.25vw;
+						margin-bottom: 0;
+						font-weight: bold;
+						color: lighten($primary-color, 25);
+						border-bottom: 1px solid black;
+					}
+					.description{
+						margin-top: 0;
+					}
+					.list{
+						margin: 0;
+					}
+				}
 			}
 		}
 
@@ -296,7 +318,7 @@ html,body{
 				white-space: nowrap;
 				margin: 0;
 				font-size: 1.2em;
-				animation: copyrightAnim 7s linear infinite;
+				animation: copyrightAnim 8s linear infinite;
 			}
 		}
 	}

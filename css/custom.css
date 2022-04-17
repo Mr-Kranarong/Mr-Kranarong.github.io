@@ -200,8 +200,8 @@ html, body {
   white-space: nowrap;
   margin: 0;
   font-size: 1.2em;
-  -webkit-animation: notificationAnim 14s linear infinite;
-          animation: notificationAnim 14s linear infinite;
+  -webkit-animation: notificationAnim 16s linear infinite;
+          animation: notificationAnim 16s linear infinite;
 }
 .wrapper .main .content {
   background: #FFFFFF;
@@ -224,18 +224,17 @@ html, body {
   background: #FFFFFF;
   color: #000000;
   transition: 0.1s linear;
+  cursor: pointer;
+  /*
+  &:hover{
+  	background: darken($secondary-color,20);
+  }
+  */
 }
 .wrapper .main .content .tab-bar button.active {
   background: #000000;
   color: #FFFFFF;
   pointer-events: none;
-}
-.wrapper .main .content .tab-bar button:hover {
-  background: #cccccc;
-}
-.wrapper .main .content .tab-bar button:active {
-  background: #000000;
-  color: #FFFFFF;
 }
 .wrapper .main .content .tab {
   width: auto;
@@ -245,6 +244,27 @@ html, body {
   color: #262626;
   overflow-y: scroll;
   font-size: 0.8em;
+}
+.wrapper .main .content .tab .section {
+  margin: 1vw 0;
+}
+.wrapper .main .content .tab .section .title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.wrapper .main .content .tab .section .subtitle {
+  margin-top: 0.25vw;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #404040;
+  border-bottom: 1px solid black;
+}
+.wrapper .main .content .tab .section .description {
+  margin-top: 0;
+}
+.wrapper .main .content .tab .section .list {
+  margin: 0;
 }
 .wrapper .main .footer {
   margin-top: 1vh;
@@ -258,8 +278,8 @@ html, body {
   white-space: nowrap;
   margin: 0;
   font-size: 1.2em;
-  -webkit-animation: copyrightAnim 7s linear infinite;
-          animation: copyrightAnim 7s linear infinite;
+  -webkit-animation: copyrightAnim 8s linear infinite;
+          animation: copyrightAnim 8s linear infinite;
 }
 
 ::-webkit-scrollbar {
