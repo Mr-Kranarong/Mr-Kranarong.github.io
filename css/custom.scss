@@ -26,6 +26,8 @@ html,body{
 	border-left: 1px solid white;
 	border-right: 1px solid white;
 	height: 100vh;
+	transform: scale(0.8);
+	transition: all 0.5s;
 
 	.sidebar{
 		background: $primary-color;
@@ -129,6 +131,7 @@ html,body{
 				margin: 0;
 
 				a{
+					cursor: default;
 					text-decoration: none;
 					color: $secondary-color;
 				}
@@ -253,22 +256,15 @@ html,body{
 					height: 100%;
 					padding: 1vw;
 					font-weight: bold;
-					background: $secondary-color;
-					color: $primary-color;
-					transition: .1s linear;
-					cursor: pointer;
+					background: $primary-color;
+					color: $secondary-color;
+					transition: all .25s;
 
 					&.active{
-						background: $primary-color;
-						color: $secondary-color;
+						background: $secondary-color;
+						color: $primary-color;
 						pointer-events: none;
 					}
-
-					/*
-					&:hover{
-						background: darken($secondary-color,20);
-					}
-					*/
 				}
 			}
 
@@ -324,6 +320,63 @@ html,body{
 	}
 }
 
+.wrapper-reveal{
+	animation: wrapperRevealAnim 0.25s linear forwards;
+}
+
+.loading-left{
+	position: fixed;
+	background: $primary-color;
+	width: 50%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	border-right: 1px solid white;
+}
+.loading-right{
+	position: fixed;
+	background: $primary-color;
+	width: 50%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	border-left: 1px solid white;
+}
+#gear-icon-load{
+	width: 20vw;
+	height: 20vw;
+	z-index: 4;
+	position: fixed;
+	top: 33vh;
+	left: 39.9vw;
+	transition: all 0.75s;
+
+	path{
+		fill: $secondary-color;
+	}
+}
+.gear-icon-load-start{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: loadGearAnim 0.75s linear forwards;
+}
+
+.fade-left{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: fadeLeftAnim 0.75s linear forwards;
+}
+.fade-right{
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	animation: fadeRightAnim 0.75s linear forwards;
+}
+
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -353,4 +406,38 @@ html,body{
 @keyframes tinyGearAnim{
 	0%{transform: rotate(360deg);}
 	100%{transform: rotate(0deg);}
+}
+@keyframes loadGearAnim{
+	0%{
+		transform: translate(0, 0) rotate(360deg);
+	}
+	100%{
+		transform: translate(0, -300%) rotate(0deg);
+	}
+}
+
+@keyframes fadeLeftAnim{
+	0%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(-100%, 0);
+	}
+}
+@keyframes fadeRightAnim{
+	0%{
+		transform: translate(0, 0);
+	}
+	100%{
+		transform: translate(100%, 0);
+	}
+}
+
+@keyframes wrapperRevealAnim{
+	0%{
+		transform: scale(0.8);
+	}
+	100%{
+		transform: scale(1);
+	}
 }

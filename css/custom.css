@@ -19,6 +19,8 @@ html, body {
   border-left: 1px solid white;
   border-right: 1px solid white;
   height: 100vh;
+  transform: scale(0.8);
+  transition: all 0.5s;
 }
 .wrapper .sidebar {
   background: #000000;
@@ -109,6 +111,7 @@ html, body {
   margin: 0;
 }
 .wrapper .sidebar .contact-information .description a {
+  cursor: default;
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -221,19 +224,13 @@ html, body {
   height: 100%;
   padding: 1vw;
   font-weight: bold;
-  background: #FFFFFF;
-  color: #000000;
-  transition: 0.1s linear;
-  cursor: pointer;
-  /*
-  &:hover{
-  	background: darken($secondary-color,20);
-  }
-  */
-}
-.wrapper .main .content .tab-bar button.active {
   background: #000000;
   color: #FFFFFF;
+  transition: all 0.25s;
+}
+.wrapper .main .content .tab-bar button.active {
+  background: #FFFFFF;
+  color: #000000;
   pointer-events: none;
 }
 .wrapper .main .content .tab {
@@ -280,6 +277,70 @@ html, body {
   font-size: 1.2em;
   -webkit-animation: copyrightAnim 8s linear infinite;
           animation: copyrightAnim 8s linear infinite;
+}
+
+.wrapper-reveal {
+  -webkit-animation: wrapperRevealAnim 0.25s linear forwards;
+          animation: wrapperRevealAnim 0.25s linear forwards;
+}
+
+.loading-left {
+  position: fixed;
+  background: #000000;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  border-right: 1px solid white;
+}
+
+.loading-right {
+  position: fixed;
+  background: #000000;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  border-left: 1px solid white;
+}
+
+#gear-icon-load {
+  width: 20vw;
+  height: 20vw;
+  z-index: 4;
+  position: fixed;
+  top: 33vh;
+  left: 39.9vw;
+  transition: all 0.75s;
+}
+#gear-icon-load path {
+  fill: #FFFFFF;
+}
+
+.gear-icon-load-start {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: loadGearAnim 0.75s linear forwards;
+          animation: loadGearAnim 0.75s linear forwards;
+}
+
+.fade-left {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: fadeLeftAnim 0.75s linear forwards;
+          animation: fadeLeftAnim 0.75s linear forwards;
+}
+
+.fade-right {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  -webkit-animation: fadeRightAnim 0.75s linear forwards;
+          animation: fadeRightAnim 0.75s linear forwards;
 }
 
 ::-webkit-scrollbar {
@@ -373,5 +434,69 @@ html, body {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes loadGearAnim {
+  0% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, -300%) rotate(0deg);
+  }
+}
+@keyframes loadGearAnim {
+  0% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, -300%) rotate(0deg);
+  }
+}
+@-webkit-keyframes fadeLeftAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes fadeLeftAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@-webkit-keyframes fadeRightAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@keyframes fadeRightAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@-webkit-keyframes wrapperRevealAnim {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes wrapperRevealAnim {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=custom.css.map */
