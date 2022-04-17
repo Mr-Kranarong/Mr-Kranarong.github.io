@@ -263,6 +263,10 @@ html, body {
 .wrapper .main .content .tab .section .list {
   margin: 0;
 }
+.wrapper .main .content .tab .section .list a {
+  color: #000000;
+  text-decoration: none;
+}
 .wrapper .main .footer {
   margin-top: 1vh;
   height: 3vh;
@@ -277,6 +281,16 @@ html, body {
   font-size: 1.2em;
   -webkit-animation: copyrightAnim 8s linear infinite;
           animation: copyrightAnim 8s linear infinite;
+}
+
+.card {
+  padding: 1em;
+  transition: all 0.5s;
+  box-shadow: 2px 2px 5px;
+}
+.card:hover {
+  box-shadow: 3px 3px 10px;
+  transform: scale(1.1);
 }
 
 .wrapper-reveal {

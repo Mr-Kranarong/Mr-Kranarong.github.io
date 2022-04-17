@@ -297,6 +297,11 @@ html,body{
 					}
 					.list{
 						margin: 0;
+
+						a{
+							color: $primary-color;
+							text-decoration: none;
+						}
 					}
 				}
 			}
@@ -317,6 +322,17 @@ html,body{
 				animation: copyrightAnim 8s linear infinite;
 			}
 		}
+	}
+}
+
+.card{
+	padding: 1em;
+	transition: all 0.5s;
+	box-shadow: 2px 2px 5px;
+
+	&:hover{
+		box-shadow: 3px 3px 10px;
+		transform: scale(1.1);
 	}
 }
 
